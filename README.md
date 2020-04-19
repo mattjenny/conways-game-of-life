@@ -1,3 +1,7 @@
+# Conway's game of life
+
+Simple React implementation of Conway's Game of Life. Try it out at: https://simple-game-of-life.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

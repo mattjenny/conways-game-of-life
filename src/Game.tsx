@@ -1,17 +1,23 @@
 import isEqual from 'lodash.isequal';
 import * as React from 'react';
 import { BoardState, Cell } from './types';
-import { getRandomState, getNextGeneration } from './lib';
+import { getRandomState, getNextGeneration, getOscillatorState } from './lib';
 import { Board } from './Board';
 
-type Props = {};
+type Props = {
+  rows?: number;
+  columns?: number;
+  oscillatorExample?: boolean;
+};
 
 export const Game: React.FC<Props> = (props: Props) => {
   const [ playInterval, setPlayInterval ] = React.useState<number | undefined>(undefined);
   const [ ticks, setTicks ] = React.useState(0);
-  const [ numRows, setNumRows ] = React.useState(10);
-  const [ numColumns, setNumColumns ] = React.useState(12);
-  const [ initialState, setInitialState ] = React.useState<BoardState>(getRandomState(numRows, numColumns));
+  const [ numRows, setNumRows ] = React.useState(props.oscillatorExample ? 3 : props.rows || 10);
+  const [ numColumns, setNumColumns ] = React.useState(props.oscillatorExample ? 9 : props.columns || 12);
+  const [ initialState, setInitialState ] = React.useState<BoardState>(
+    props.oscillatorExample ? getOscillatorState() : getRandomState(numRows, numColumns)
+  );
   const [ boardState, setBoardState ] = React.useState<BoardState>(initialState);
 
   // Use a ref to access the current count value in

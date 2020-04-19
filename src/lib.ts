@@ -73,3 +73,15 @@ export function getRandomState(rows: number, columns: number) {
   }
   return { cells };
 }
+
+export function getOscillatorState() {
+  const cells: Cell[][] = new Array(3);
+  for (let i = 0; i < 3; i++) {
+    const row: Cell[] = new Array(9);
+    for (let j = 0; j < 9; j++) {
+      row[j] = { alive: j === 4 };
+    }
+    cells[i] = row;
+  }
+  return { cells };
+}
