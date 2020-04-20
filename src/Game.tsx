@@ -119,6 +119,9 @@ export const Game: React.FC<Props> = (props: Props) => {
         boardState={boardState}
         onCellClick={ticks === 0 ? onCellClick : undefined}
       />
+      <p>
+        Based on the Game of Life simulation by Dr. John Conway (<a href="https://web.stanford.edu/class/sts145/Library/life.pdf">https://web.stanford.edu/class/sts145/Library/life.pdf</a>). RIP, Dr. Conway ❤️
+      </p>
     </div>
   );
 }
