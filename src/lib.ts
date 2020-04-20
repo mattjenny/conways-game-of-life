@@ -77,8 +77,8 @@ export function getRandomState(rows: number, columns: number) {
 export function getOscillatorState() {
   const cells: Cell[][] = new Array(3);
   for (let i = 0; i < 3; i++) {
-    const row: Cell[] = new Array(9);
-    for (let j = 0; j < 9; j++) {
+    const row: Cell[] = new Array(7);
+    for (let j = 0; j < 7; j++) {
       row[j] = { alive: j === 0 || j === 2 || j === 3 };
     }
     cells[i] = row;
