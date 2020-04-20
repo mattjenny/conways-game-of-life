@@ -14,7 +14,7 @@ export const Game: React.FC<Props> = (props: Props) => {
   const [ playInterval, setPlayInterval ] = React.useState<number | undefined>(undefined);
   const [ ticks, setTicks ] = React.useState(0);
   const [ numRows, setNumRows ] = React.useState(props.oscillatorExample ? 3 : props.rows || 10);
-  const [ numColumns, setNumColumns ] = React.useState(props.oscillatorExample ? 9 : props.columns || 12);
+  const [ numColumns, setNumColumns ] = React.useState(props.oscillatorExample ? 8 : props.columns || 12);
   const [ initialState, setInitialState ] = React.useState<BoardState>(
     props.oscillatorExample ? getOscillatorState() : getRandomState(numRows, numColumns)
   );
