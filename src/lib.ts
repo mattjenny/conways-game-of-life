@@ -79,7 +79,7 @@ export function getOscillatorState() {
   for (let i = 0; i < 3; i++) {
     const row: Cell[] = new Array(9);
     for (let j = 0; j < 9; j++) {
-      row[j] = { alive: j === 4 || j === 5 };
+      row[j] = { alive: j === 0 || j === 2 || j === 3 };
     }
     cells[i] = row;
   }
